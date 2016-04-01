@@ -60,6 +60,33 @@ function InitializeFolders
 
 # 
 # Description:
+#  - Displays the script argument values (default or user-supplied).
+#
+# Parameters:
+#  - N/A.
+#
+# Return:
+#  - N/A.
+#
+# Notes:
+#  - Please ensure that the Initialize() method has been called at least once before this 
+#    method. Else this method can only write to console and not to log files. 
+#
+
+function DisplayArgValues
+{
+    WriteLog "========== Configuration =========="
+    WriteLog $("URL Fichier de configuration : " + $urlConfigurationPath)
+    WriteLog $("Emplacement de telechargement : " + $DownloadPath) 
+    WriteLog $("Emplacement du fichier Binaire SQL Server 2008 : " + $BinaryPath) 
+    WriteLog "========== Configuration =========="
+}
+
+
+##################################################################################################
+
+# 
+# Description:
 #  - Writes specified string to the script log (indicated by $ScriptLog).
 #
 # Parameters:
@@ -88,7 +115,7 @@ function WriteLog
 try
 {
     InitializeFolders
-
+    DisplayArgValues
 
     # some pre-condition checks
     if ([string]::IsNullOrEmpty($urlConfigurationPath))
@@ -111,7 +138,7 @@ try
     }
 
    #-------------------------------------------[Telechargement du fichier en ligne]------------------------------------------ 
-    WriteLog "Téléchargement du fichier de configuration:"
+    WriteLog "Telechargement du fichier de configuration:"
     WriteLog "`t $urlConfigurationPath "
     $client = new-object System.Net.WebClient 
     $client.DownloadFile($urlConfigurationPath, $DownloadPath) 
@@ -133,6 +160,7 @@ catch
     # Important note: Throwing a terminating error (using $ErrorActionPreference = "stop") still returns exit 
     # code zero from the powershell script. The workaround is to use try/catch blocks and return a non-zero 
     # exit code from the catch block. 
+    WriteLog "[Fin]"
     exit -1
 }
 
