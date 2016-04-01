@@ -31,6 +31,9 @@
     }
   },
   "runCommand": {
-    "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass -File DownloadAndInstallSql2008Server.ps1', ' -urlConfigurationPath', replace(parameters('urlConfigurationPath'), ' ', '_'), ' -DownloadPath ', parameters('DownloadPath'), ' -BinaryPath ', parameters('BinaryPath'))]"
+     "commandToExecute": "[concat('powershell.exe -File DownloadAndInstallSql2008Server.ps1'
+  , " -urlConfigurationPath ", parameters("urlConfigurationPath")
+  , " -DownloadPath ', parameters("DownloadPath")
+  , " -BinaryPath ", parameters("BinaryPath"))]"
   }
 }
