@@ -140,13 +140,14 @@ try
 
    #-------------------------------------------[Telechargement du fichier en ligne]------------------------------------------ 
     WriteLog "Telechargement du fichier de configuration:"
-    WriteLog "`t $urlConfigurationPath "
+    WriteLog "`t$urlConfigurationPath "
     $client = new-object System.Net.WebClient 
     $client.DownloadFile($urlConfigurationPath, $DownloadPath) 
 
     #--------------------------------------------[Installation de Sql Server 2008 ]-------------------------------------------
     WriteLog "Installation de SQL Server 2008"
     $cmd = "'$BinaryPath' /ConfigurationFile='$DownloadPath' /Q"
+    WriteLog $cmd
     Invoke-Expression $cmd 
 }
 catch
