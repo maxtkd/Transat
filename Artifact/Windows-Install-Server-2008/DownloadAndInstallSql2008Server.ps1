@@ -155,7 +155,7 @@ catch
     {
         $errMsg = $Error[0].Exception.Message
         WriteLog $errMsg
-        writeLog $Error[0]
+        writeLog $Error[0].ErrorRecord.InvocationInfo.PositionMessage
         Write-Host $errMsg
     }
 
