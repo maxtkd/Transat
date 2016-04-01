@@ -50,7 +50,7 @@ $ScriptLog = Join-Path -Path $ScriptLogFolder -ChildPath "SQLServer2008.log"
 function InitializeFolders
 {
 
-    if ($false -eq (Test-Path -Path $ScriptLogFolder))
+    if ($true -eq (Test-Path -Path $ScriptLogFolder))
     {
         New-Item -Path $ScriptLogFolder -ItemType directory | Out-Null
     }
@@ -75,6 +75,7 @@ function InitializeFolders
 
 function DisplayArgValues
 {
+    WriteLog
     WriteLog "========== Configuration =========="
     WriteLog $("URL Fichier de configuration : " + $urlConfigurationPath)
     WriteLog $("Emplacement de telechargement : " + $DownloadPath) 
@@ -154,6 +155,7 @@ catch
     {
         $errMsg = $Error[0].Exception.Message
         WriteLog $errMsg
+        writeLog $Error[0]
         Write-Host $errMsg
     }
 
@@ -163,6 +165,9 @@ catch
     WriteLog "[Fin]"
     exit -1
 }
+
+
+
 
 
 
