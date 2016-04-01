@@ -1,11 +1,12 @@
 {
   "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2015-01-01/dtlArtifacts.json",
-  "title": "Create a web shortcut",
-  "description": "Creates a shortcut to an internet or intranet URL (shortcut file is created in the public desktop folder).",
+  "title": "Intaller Sql Server 2008 R2",
+  "description": "TÃ©lÃ©charge un fichier configuration pour SQL Server 2008 puis install le binaire",
   "tags": [
     "Windows",
-    "Url",
-    "Shortcut"
+    "SQL",
+    "Server",
+    "Configuration"
   ],
   "iconUri": "",
   "targetOsType": "Windows",
@@ -13,20 +14,20 @@
     "urlConfigurationPath": {
       "type": "string",
       "displayName": "Emplacement Url",
-      "description": "Addresse URL du fichier de configuration de Windows Server 2008.",
+      "description": "Addresse URL du fichier de configuration de SQL Server 2008.",
       "defaultValue": ""
     },
     "DownloadPath": {
       "type": "string",
       "displayName": "Emplacement sur le Disque",
-      "description": "Emplacement sur le disque de la VM où sera téléchargé le fichier de configuration",
-      "defaultValue": "C:\Deploiement\ConfigWindowsServer2008.ini"
+      "description": "Emplacement sur le disque de la VM oÃ¹ sera tÃ©lÃ©chargÃ© le fichier de configuration",
+      "defaultValue": ""
     },
     "BinaryPath": {
       "type": "string",
       "displayName": "Emplacement du fichier binaire",
-      "description": "Emplacement sur le disque du fichier binaire de Windows Server 2008",
-      "defaultValue": "C:\Deploiement\Sql Server 2008 r2 Standard\Setup.exe"
+      "description": "Emplacement sur le disque du fichier binaire de SQL Server 2008",
+      "defaultValue": ""
     }
   },
   "runCommand": {
