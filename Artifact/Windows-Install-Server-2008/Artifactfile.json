@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2015-01-01/dtlArtifacts.json",
   "title": "Intaller Sql Server 2008 R2",
-  "description": "Télécharge un fichier configuration pour SQL Server 2008 puis install le binaire",
+  "description": "Télécharger un fichier configuration pour SQL Server 2008 puis installer le binaire",
   "tags": [
     "Windows",
     "SQL",
