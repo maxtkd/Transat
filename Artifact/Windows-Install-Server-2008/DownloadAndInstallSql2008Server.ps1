@@ -26,9 +26,8 @@
 #
 
 # Location of the log files
-$ShortcutCreatorFolder = Join-Path $PSScriptRoot -ChildPath $("Url-Shortcut-Creator-" + [System.DateTime]::Now.ToString("yyyy-MM-dd-HH-mm-ss"))
 $ScriptLogFolder = "C:\ArtifactsLogs"
-$ScriptLog = Join-Path -Path $ScriptLogFolder -ChildPath "ShortcutCreator.log"
+$ScriptLog = Join-Path -Path $ScriptLogFolder -ChildPath "SQLServer2008.log"
 
 
 ##################################################################################################
@@ -89,20 +88,6 @@ function WriteLog
 try
 {
     InitializeFolders
-    
-
-        [string] $urlConfigurationPath,
-    
-    #Emplacement sur le disque apres téléchargement
-    [ValidateNotNullOrEmpty()]
-    [Parameter(Mandatory=$True)]
-    [string] $DownloadPath,
-
-    #Emplacement sur le disque du binaire Windows server 2008
-    [ValidateNotNullOrEmpty()]
-    [Parameter(Mandatory=$True)]
-    [string] $BinaryPath
-
 
 
     # some pre-condition checks
