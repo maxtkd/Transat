@@ -15,19 +15,19 @@
       "type": "string",
       "displayName": "Emplacement Url",
       "description": "Addresse URL du fichier de configuration de SQL Server 2008.",
-      "defaultValue": ""
+      "defaultValue": "http://sharemartin.blob.core.windows.net/uploads/ConfigurationFile.ini"
     },
     "DownloadPath": {
       "type": "string",
       "displayName": "Emplacement sur le Disque",
       "description": "Emplacement sur le disque de la VM où sera téléchargé le fichier de configuration",
-      "defaultValue": ""
+      "defaultValue": "C:\Deploiement\ConfigurationFile.ini"
     },
     "BinaryPath": {
       "type": "string",
       "displayName": "Emplacement du fichier binaire",
       "description": "Emplacement sur le disque du fichier binaire de SQL Server 2008",
-      "defaultValue": ""
+      "defaultValue": "C:\Deploiement\sql_server_2008_r2_standard\setup.exe"
     }
   },
   "runCommand": {
