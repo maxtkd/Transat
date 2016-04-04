@@ -8,7 +8,7 @@
     "Server",
     "Configuration"
   ],
-  "iconUri": "",
+  "iconUri": "http://www.fpweb.net/public/images/icons/sql-server-logo-color.png",
   "targetOsType": "Windows",
   "parameters": {
     "urlConfigurationPath": {
