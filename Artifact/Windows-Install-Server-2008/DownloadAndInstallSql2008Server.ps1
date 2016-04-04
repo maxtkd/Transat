@@ -145,10 +145,10 @@ try
     $client.DownloadFile($urlConfigurationPath, $DownloadPath) 
 
     #--------------------------------------------[Installation de Sql Server 2008 ]-------------------------------------------
-    WriteLog "Installation de SQL Server 2008"
-    $cmd = "'$BinaryPath' /ConfigurationFile='$DownloadPath' /Q"
-    WriteLog $cmd
-    Invoke-Expression $cmd 
+    #WriteLog "Installation de SQL Server 2008"
+    #$cmd = "'$BinaryPath' /ConfigurationFile='$DownloadPath' /Q"
+    #WriteLog $cmd
+    #Invoke-Expression $cmd 
 }
 catch
 {
@@ -168,25 +168,4 @@ catch
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$PSVersionTable
