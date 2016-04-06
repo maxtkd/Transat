@@ -16,6 +16,6 @@
     }
   },
   "runCommand": {
-      "commandToExecute": "[concat('cmd.exe /C choco install ', parameters('packages'),  ' /y /force > C:\\Deploiement\\LogChocolatey\\Log.txt')]"
+      "commandToExecute": "[concat('cmd.exe /C cinst ',replace(parameters('packages'), ',', ' ') ,  ' /y /force > C:\\Deploiement\\LogChocolatey\\Log.txt')]"
   }
 }
