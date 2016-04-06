@@ -227,6 +227,7 @@ function InstallPackages
 	$ProcessInfo.RedirectStandardError = $true
 	$ProcessInfo.CreateNoWindow = $false
 	$ProcessInfo.UseShellExecute = $false
+	$ProcessInfo.Verb = "runas"
 	
 
 
