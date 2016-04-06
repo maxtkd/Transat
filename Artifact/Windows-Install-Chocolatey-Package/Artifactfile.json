@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2015-01-01/dtlArtifacts.json",
   "title": "Install Chocolatey Packages",
-  "description": "Installs the Chocolatey package manager along with a user selected set of packages",
+  "description": "Installe une liste de packages Chocolatey",
   "tags": [
     "Windows",
     "Chocolatey"
@@ -12,10 +12,10 @@
     "packages": {
       "type": "string",
       "displayName": "Packages",
-      "description": "Comma delimited list of package names to be installed, for example: 7Zip,Fiddler4. A complete list of public packages can be found at https://chocolatey.org/packages."
+      "description": "Chaque package doit être délimité par un espace, example: 7Zip Fiddler4 Firefox. La liste complete des packages se trouve sur https://chocolatey.org/packages."
     }
   },
   "runCommand": {
-      "commandToExecute": "[concat('md.exe /C choco install ', parameters('packages'),  '/y /force > C:\\Deploiement\\LogChocolatey\\Log.txt')]"
+      "commandToExecute": "[concat('cmd.exe /C cinst ', parameters('packages'),  '/y /force > C:\\Deploiement\\LogChocolatey\\Log.txt')]"
   }
 }
