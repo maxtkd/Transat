@@ -221,20 +221,29 @@ function InstallPackages
         $Process = New-Object System.Diagnostics.Process
 
 	$ProcessInfo.FileName = "$($env:SystemRoot)\system32\cmd.exe"
-        $ProcessInfo.Arguments = "/C choco install firefox /y /force"
+        $ProcessInfo.Arguments = "/C choco install $package /y /force"
         $ProcessInfo.WindowStyle = [System.Diagnostics.ProcessWindowStyle]::Normal
+	$ProcessInfo.RedirectStandardOutput = $true
+	$ProcessInfo.RedirectStandardError = $true
+	$ProcessInfo.CreateNoWindow = $false
+	$ProcessInfo.UseShellExecute = $false
 	
-	$Process.StartInfo.RedirectStandardOutput = $true
-	$Process.StartInfo.RedirectStandardError = $true
-	
+
+
 	$Process.StartInfo = $ProcessInfo
 	$Process.Start()
-	$Process.WaitForExit()
-	$stdout = $Process.StandardOutput.ReadToEnd()
-	$stderr = $Process.StandardError.ReadToEnd()
-	WriteLog "stdout: $stdout"
-	WriteLog "stderr: $stderr"
-	WriteLog "exit code: " + $p.ExitCode
+
+
+
+	echo "Live output..."
+	while (!$Process.HasExited)
+	{
+   		$line = $Process.StandardOutput.ReadLine()
+   		WriteLog $line
+	}
+
+
+
 
 	WriteLog "Success."
         if ($? -eq $false)
