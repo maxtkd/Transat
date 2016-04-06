@@ -229,6 +229,11 @@ function InstallPackages
 	$Process.Start()
 
 	$Process.WaitForExit()
+	$stdout = $p.StandardOutput.ReadToEnd()
+	$stderr = $p.StandardError.ReadToEnd()
+	WriteLog "stdout: $stdout"
+	WriteLog "stderr: $stderr"
+	WriteLog "exit code: " + $p.ExitCode
 
 	WriteLog "Success."
         if ($? -eq $false)
