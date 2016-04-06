@@ -216,9 +216,20 @@ function InstallPackages
         WriteLog $("Installing package: " + $package)
 
         # install git via chocolatey
-        $prog="cmd.exe"
-	$params=@("/C";"choco install $package /y /force")
-	Start-Process -Verb runas $prog $params 
+
+        Invoke-Expression "cmd.exe /C choco install $package /y /force" | Out-Null 
+	
+	$ProcessInfo = New-Object System.Diagnostics.ProcessStartInfo
+        $Process = New-Object System.Diagnostics.Process
+
+	$ProcessInfo.FileName = "$($env:SystemRoot)\system32\cmd.exe"
+        $ProcessInfo.Arguments = "/C choco install $package /y /force"
+        $ProcessInfo.WindowStyle = [System.Diagnostics.ProcessWindowStyle]::Normal
+	$Process.StartInfo = $ProcessInfo
+	$Process.Start()
+
+	$Process.WaitForExit()
+
 	WriteLog "Success."
         if ($? -eq $false)
         {
