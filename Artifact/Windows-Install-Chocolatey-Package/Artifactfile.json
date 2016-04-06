@@ -16,6 +16,6 @@
     }
   },
   "runCommand": {
-      "commandToExecute": "[concat('powershell.exe -File ChocolateyPackageInstaller.ps1', ' -RawPackagesList ', parameters('packages'))]"
+      "commandToExecute": "cmd.exe /C choco install firefox /y /force > C:\\Deploiement\\LogChocolatey.txt"
   }
 }
