@@ -216,7 +216,9 @@ function InstallPackages
         WriteLog $("Installing package: " + $package)
 
         # install git via chocolatey
-        Invoke-Expression "cmd.exe /C choco install $package /y /force" | WriteLog
+        $prog="cmd.exe"
+	$params=@("/C";"choco install $package /y /force")
+	Start-Process -Verb runas $prog $params 
 	WriteLog "Success."
         if ($? -eq $false)
         {
