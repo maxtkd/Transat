@@ -216,8 +216,8 @@ function InstallPackages
         WriteLog $("Installing package: " + $package)
 
         # install git via chocolatey
-        choco install $package -y -force -yes -acceptlicense -verbose | Out-Null 
-	WriteLog "Success." 
+        Invoke-Expression "cmd.exe /C choco install $package /y /force" | Out-Null 
+	WriteLog "Success."
         if ($? -eq $false)
         {
             $errMsg = $("Error! Installation failed. Please see the chocolatey logs in %ALLUSERSPROFILE%\chocolatey\logs folder for details.")
@@ -225,7 +225,7 @@ function InstallPackages
             Write-Error $errMsg 
         }
     
-               
+                
     }
 }
 
