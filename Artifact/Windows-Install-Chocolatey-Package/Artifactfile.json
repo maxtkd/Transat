@@ -16,6 +16,6 @@
     }
   },
   "runCommand": {
-      "commandToExecute": "cmd.exe /C choco install firefox /y /force"
+      "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass -File ChocolateyPackageInstaller.ps1', ' -RawPackagesList ', parameters('packages'))]"
   }
 }
