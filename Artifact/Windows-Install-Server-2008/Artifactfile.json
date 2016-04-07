@@ -19,6 +19,6 @@
     }
   },
   "runCommand": {
-     "commandToExecute": "[concat('cmd.exe /C ', parameters('BinaryPath'), ' /ConfigurationFile=C:\\Deploiement\\ConfigurationFile.ini')]"
+     "commandToExecute": "[concat('cmd.exe /C ', parameters('BinaryPath'), ' /ConfigurationFile=C:\\Deploiement\\ConfigurationFile.ini > C:\\Deploiement\\LogSQLServer2008.txt')]"
   }
 }
