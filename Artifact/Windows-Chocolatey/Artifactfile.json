@@ -9,6 +9,6 @@
   "iconUri": "https://github.com/chocolatey/chocolatey/raw/master/docs/logo/chocolateyicon.gif",
   "targetOsType": "Windows",
   "runCommand": {
-    "commandToExecute": "powershell.exe -NoProfile -ExecutionPolicy Bypass -Command (iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))\" && SET PATH=%PATH%;%ALLUSERSPROFILE%\\chocolatey\\bin)"
+    "commandToExecute": "powershell.exe -ExecutionPolicy bypass -File install.ps1 && Shutdown /r /t 00"
   }
 }
