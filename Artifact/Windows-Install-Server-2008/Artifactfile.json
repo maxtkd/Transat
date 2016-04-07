@@ -34,3 +34,4 @@
      "commandToExecute": "[concat('powershell.exe -File DownloadAndInstallSql2008Server.ps1', ' -urlConfigurationPath ', parameters('urlConfigurationPath'), ' -DownloadPath ', parameters('DownloadPath'), ' -BinaryPath ', parameters('BinaryPath'))]"
   }
 }
+"'cmd.exe /C ', parameters('BinaryPath'), ' /ConfigurationFile='$DownloadPath' /Q"
