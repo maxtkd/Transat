@@ -11,18 +11,6 @@
   "iconUri": "http://www.fpweb.net/public/images/icons/sql-server-logo-color.png",
   "targetOsType": "Windows",
   "parameters": {
-    "urlConfigurationPath": {
-      "type": "string",
-      "displayName": "Emplacement Url",
-      "description": "Addresse URL du fichier de configuration de SQL Server 2008.",
-      "defaultValue": "http://sharemartin.blob.core.windows.net/uploads/ConfigurationFile.ini"
-    },
-    "DownloadPath": {
-      "type": "string",
-      "displayName": "Emplacement sur le Disque",
-      "description": "Emplacement sur le disque de la VM où sera téléchargé le fichier de configuration",
-      "defaultValue": "C:\\Deploiement\\ConfigurationFile.ini"
-    },
     "BinaryPath": {
       "type": "string",
       "displayName": "Emplacement du fichier binaire",
@@ -31,7 +19,6 @@
     }
   },
   "runCommand": {
-     "commandToExecute": "[concat('powershell.exe -File DownloadAndInstallSql2008Server.ps1', ' -urlConfigurationPath ', parameters('urlConfigurationPath'), ' -DownloadPath ', parameters('DownloadPath'), ' -BinaryPath ', parameters('BinaryPath'))]"
+     "commandToExecute": "'cmd.exe /C ', parameters('BinaryPath'), ' /ConfigurationFile=C:\\Deploiement\\ConfigurationFile.ini /Q'"
   }
 }
-"'cmd.exe /C ', parameters('BinaryPath'), ' /ConfigurationFile='$DownloadPath' /Q"
