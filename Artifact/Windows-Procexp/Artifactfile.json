@@ -4,9 +4,9 @@
   "description": "Intalle le package Process Explorer de Chocolatey",
   "tags": [
     "Windows",
-    "SQL",
-    "Server",
-    "Configuration"
+    "Process",
+    "Explorer",
+    "Chocolatey"
   ],
   "iconUri": "https://chocolatey.org/content/packageimages/procexp.16.12.png",
   "targetOsType": "Windows",
