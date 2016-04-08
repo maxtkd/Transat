@@ -9,6 +9,6 @@
   "iconUri": "https://github.com/chocolatey/chocolatey/raw/master/docs/logo/chocolateyicon.gif",
   "targetOsType": "Windows",
   "runCommand": {
-    "commandToExecute": "(if not exist 'C:\\Deploiement\\LogChocolatey' mkdir 'C:\\Deploiement\\LogChocolatey') && powershell.exe -ExecutionPolicy bypass -File install.ps1 && Shutdown /r /t 00"
+    "commandToExecute": "(if not exist C:\\Deploiement\\LogChocolatey mkdir C:\\Deploiement\\LogChocolatey) && powershell.exe -ExecutionPolicy bypass -File install.ps1 && Shutdown /r /t 00"
   }
 }
