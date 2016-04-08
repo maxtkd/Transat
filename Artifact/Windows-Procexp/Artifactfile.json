@@ -1,7 +1,7 @@
 ﻿{
   "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2015-01-01/dtlArtifacts.json",
   "title": "Intaller Winscp",
-  "description": "Intalle le package Winscp de Chocolatey",
+  "description": "Intalle le package Process Explorer de Chocolatey",
   "tags": [
     "Windows",
     "SQL",
