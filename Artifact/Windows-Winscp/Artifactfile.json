@@ -11,6 +11,6 @@
   "iconUri": "https://chocolatey.org/content/packageimages/winscp.5.7.7.png",
   "targetOsType": "Windows",
   "runCommand": {
-     "commandToExecute": "cmd.exe /C choco install ',parameters('packages'), ' /y /force >> C:\\Deploiement\\LogChocolatey\\Log.txt"
+     "commandToExecute": "cmd.exe /C choco install winscp /y /force >> C:\\Deploiement\\LogChocolatey\\Log.txt"
   }
 }
