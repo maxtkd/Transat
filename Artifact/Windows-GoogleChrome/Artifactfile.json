@@ -1,0 +1,16 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2015-01-01/dtlArtifacts.json",
+  "title": "Intaller Google Chrome",
+  "description": "Intalle le package Google Chrome de Chocolatey",
+  "tags": [
+    "Windows",
+    "Web",
+    "googlechrome",
+    "Chocolatey"
+  ],
+  "iconUri": "https://chocolatey.org/content/packageimages/GoogleChrome.49.0.2623.112.svg",
+  "targetOsType": "Windows",
+  "runCommand": {
+     "commandToExecute": "cmd.exe /C choco install googlechrome /y /force >> C:\\Deploiement\\LogChocolatey\\Log.txt"
+  }
+}
