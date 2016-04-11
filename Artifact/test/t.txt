@@ -1,0 +1,19 @@
+function test-value
+{
+    param(
+        [Parameter(Position=0)]
+        [ValidateSet('word','excel','powerpoint')]
+        [System.String]$Application,
+
+        [Parameter(Position=1)]
+        [ValidateSet('v2007','v2010')]
+        [System.String]$Version
+    )
+
+
+    write-host "Application: $Application"
+    write-host "Version: $Version"
+}   
+
+
+test-value -application foo
